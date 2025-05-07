@@ -1,0 +1,13 @@
+/* Fonts */
+/* 1. Odinson = only ment to be used for the floating Dwarkutuk title */
+/* 2. Open Sans = used for everything else */
+
+@font-face {
+    font-family: 'Odinson';
+    src: url(../fonts/OdinsonLight-vMZD.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/OpenSans-VariableFont_wdth\,wght.ttf)
+}

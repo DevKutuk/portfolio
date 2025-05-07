@@ -1,0 +1,208 @@
+/* Styles */
+
+/* 0. Body */
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.nav-bar-item:hover {
+    color: #cccccc;
+}
+
+#resume {
+    color: white ;
+    background-color: #031a31;
+}
+
+#projects {
+    color: white;
+    background-color: #031a31;
+}
+
+#about-me {
+    color: white;
+    background-color: #031a31;
+}
+
+#contact-me {
+    color: white;
+    background-color: #031a31;
+}
+
+#footer {
+    color: white;
+    background-color: #031a31;
+}
+
+.text-body-emphasis {
+    color: white !important;
+}
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+}
+
+/* 1. Home */
+/* 1.1 Navigation bar */
+
+nav {
+    display: flex;
+    justify-content: space-between; /* important: push left and right apart */
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 2rem;
+    z-index: 10;
+    position: fixed;
+}
+
+.nav-left {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding-left: 2rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* 1.2 Hero */
+
+.hero {
+    height: 100vh;
+    background: url(../assets/Dwarkutuk.png) no-repeat center center/cover;
+    position: relative;
+    padding-top: 80px; /* pushes content below nav? */
+}
+
+.hero-title {
+    font-family: 'Odinson', sans-serif;
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+
+    display: flex;
+}
+
+.hero-sub-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-top: -15px
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%); /* Without this it is not in the centre, but I don't know why aaaaaaa*/
+    z-index: 3;
+}
+
+/* Animation  */
+
+.hero-title > span {
+    display: inline-block;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-title span:nth-child(1) { animation-delay: 0s; }
+.hero-title span:nth-child(2) { animation-delay: 0.2s; }
+.hero-title span:nth-child(3) { animation-delay: 0.4s; }
+.hero-title span:nth-child(4) { animation-delay: 0.6s; }
+.hero-title span:nth-child(5) { animation-delay: 0.8s; }
+.hero-title span:nth-child(6) { animation-delay: 1.0s; }
+.hero-title span:nth-child(7) { animation-delay: 1.2s; }
+.hero-title span:nth-child(8) { animation-delay: 1.4s; }
+.hero-title span:nth-child(9) { animation-delay: 1.6s; }
+
+/*
+- Every letter of "Dwarkutuk" is wrapped inside a <span>.
+- We tell each span to run the float animation.
+- display: inline-block; is needed so each letter can move individually (otherwise text is just inline and can't move freely).
+- 4 seconds total (4s) for a full cycle, and infinite loop to repeat forever.
+- ease-in-out makes the movement start slow, move faster, slow down again (feels natural)
+- At 0% (start): the letter is at its normal position.
+- At 50% (middle): the letter moves 10px upwards (floating up).
+- At 100% (end): the letter returns to its original position.
+- Each span has a different animation delay creatign the wave effect. 
+*/
+
+.bottom-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+/*Gotta get the responsiveness goin BABEEH*/
+
+/* Small screens only (≤576px) */
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 3rem;
+        text-align: left;
+    }
+
+    .hero-sub-title {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    #footer {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    footer .row {
+        flex-direction: column;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 1rem;
+    }
+
+    .nav-bar-item {
+        font-size: 0.8rem !important;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .nav-left {
+        font-size: 1rem;
+    }
+}
